@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Mensagem Acessível</title>
+</head>
+<body>
+  <h1 id="titulo">Bem Vindo, Deus te Ama!</h1>
+
+  <p id="mensagem">Nunca deixe nada te abalar, as vezes a vida nao é fácil mas sempre siga em frente, Deus está ao seu lado!</p>
+
+  <button onclick="lerMensagem()" aria-label="Ouvir a mensagem de boas-vindas">
+    Ouvir mensagem
+  </button>
+
+  <script>
+    function lerMensagem() {
+
+      const texto = document.getElementById("mensagem").textContent;
+
+      const fala = new SpeechSynthesisUtterance(texto);
+
+      fala.lang = "pt-BR";
+
+      speechSynthesis.speak(fala);
+    }
+  </script>
+
+</body>
+</html>
